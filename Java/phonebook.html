@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <table border="10%">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone number</th>
+            </tr>
+            <tr>
+                <th id="first"></th>
+                <th id="last"></th>
+                <th id="phone"></th>
+            </tr>
+        </table>
+        <script>
+            let first = prompt("Please enter your first name");
+            document.getElementById("first").innerHTML = first;
+            let last = prompt("Please enter your last name");
+            document.getElementById("last").innerHTML = last;
+            let phone = prompt("Please enter you phone number as (###)###-####");
+            document.getElementById("phone").innerHTML = phone;
+        </script>
+    </body>
+</html>
