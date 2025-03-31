@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Please enter a number</p>
+        <input type="text" id="numberInput"> <br>
+        <button onclick="checkORE()">Submit</button>
+        <div class="result" id="result"></div>
+        <script>
+            function checkORE() {
+                var number = document.getElementById("numberInput").value;
+                var ResultDiv = document.getElementById("result");
+                var result = "";
+                if (isNaN(number) || number == "") {
+                    result = "That's not number please delete and try again";
+                    
+                }
+                else if (number % 2 == 0) {
+                    result = "your number is even";
+                    
+                } else {
+                    result = "your number is odd";
+                    
+                }
+                ResultDiv.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
