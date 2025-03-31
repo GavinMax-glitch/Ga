@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Please enter your first name:</p>
+        <input type="text" id="firstInput">
+        <p>Please enter your last name:</p>
+        <input type="text" id="lastInput">
+        <p>Please enter your phone number ex (###)###-####:</p>
+        <input type="text" id="phoneInput">
+        <button onclick="checkPB()">Submit</button>
+
+        <table border="1" width="50%">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone number</th>
+            </tr>
+            <tr>
+                <td id="firstCell"></td>
+                <td id="lastCell"></td>
+                <td id="phoneCell"></td>
+            </tr>
+        </table>
+
+        <script>
+            function checkPB() {
+                // Get values from input fields
+                var first = document.getElementById("firstInput").value;
+                var last = document.getElementById("lastInput").value;
+                var phone = document.getElementById("phoneInput").value;
+
+                // Set values inside the table cells
+                document.getElementById("firstCell").innerHTML = first;
+                document.getElementById("lastCell").innerHTML = last;
+                document.getElementById("phoneCell").innerHTML = phone;
+            }
+        </script>
+    </body>
+</html>
