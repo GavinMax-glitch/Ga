@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        Please enter a starting number
+        <input type="text" id="start"> <br>
+        Please enter an ending number
+        <input type="text" id="end"> <br>
+        Please enter an increment or decrement amount (e.g., 1 or -1)
+        <input type="text" id="AOM"> <br>
+        <button onclick="forloop()">Submit</button><br>
+        <p>Result:</p>
+        <div id="result"></div>
+
+        <script>
+            function forloop() {
+                var flStart = parseInt(document.getElementById("start").value);
+                var flEnd = parseInt(document.getElementById("end").value);
+                var flAOM = parseInt(document.getElementById("AOM").value);
+                var resultDiv = document.getElementById("result");
+                
+                // Clear previous result
+                resultDiv.innerHTML = "";
+
+                if (isNaN(flStart) || isNaN(flEnd) || isNaN(flAOM)) {
+                    resultDiv.innerHTML = "Please enter valid numbers!";
+                    return;
+                }
+
+                if (flAOM === 0) {
+                    resultDiv.innerHTML = "Increment cannot be zero!";
+                    return;
+                }
+
+                if ((flAOM > 0 && flStart > flEnd) || (flAOM < 0 && flStart < flEnd)) {
+                    resultDiv.innerHTML = "Increment value does not match range direction!";
+                    return;
+                }
+
+                for (var number = flStart; (flAOM > 0 ? number <= flEnd : number >= flEnd); number += flAOM) {
+                    resultDiv.innerHTML += number + "<br>";
+                }
+            }
+        </script>
+    </body>
+</html>
