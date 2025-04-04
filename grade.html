@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>First Name</p>
+        <input type="text" id="fnip">
+        <p>Last Name</p>
+        <input type="text" id="lnip">
+        <p>Grade 1</p>
+        <input type="text" id="gr1ip">
+        <p>Grade 2</p>
+        <input type="text" id="gr2ip">
+        <p>Grade 3</p>
+        <input type="text" id="gr3ip">
+        <button onclick="grade()">Calculate</button>
+        <p>Output</p>
+        <div id="func"></div>
+        <br>
+        <div id="g1c"></div>
+        <div id="g2c"></div>
+        <div id="g3c"></div>
+        <div id="gac"></div>
+        <div id="lgc"></div>
+        <script>
+            function grade() {
+            var first = document.getElementById("fnip").value;
+            var last = document.getElementById("lnip").value;
+            var g1 = parseFloat(document.getElementById("gr1ip").value);
+            var g2 = parseFloat(document.getElementById("gr2ip").value);
+            var g3 = parseFloat(document.getElementById("gr3ip").value);
+            var fun = "Full Name: " + first + " " + last;
+            var lg = "";
+            var ga = (g1 + g2 + g3) / 3;
+            if (ga <= 59) {
+                lg = "F";
+            }
+            if (ga >= 60 && ga < 70) {
+                lg = "D";
+            }
+            if (ga >= 70 && ga < 80) {
+                lg = "C";
+            }
+            if (ga >= 80 && ga < 90) {
+                lg = "B";
+            }
+            if (ga >= 90) {
+                lg = "A";
+            }
+            document.getElementById("func").innerHTML = fun;
+            document.getElementById("g1c").innerHTML = "Grade 1: " + g1;
+            document.getElementById("g2c").innerHTML = "Grade 2: " + g2;
+            document.getElementById("g3c").innerHTML = "Grade 3: " + g3;
+            document.getElementById("gac").innerHTML = "Average: " + ga;
+            document.getElementById("lgc").innerHTML = "Letter Grade: " + lg;
+            }
+        </script>
+    </body>
+</html>
