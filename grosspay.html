@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Please enter your hours worked</p>
+        <input type="text" id="hwip">
+        <p>Please enter your hourly wage</p>
+        <input type="text" id="hlwip">
+        <button onclick="earnings()">Submit</button>
+        <p>Amount Made</p>
+        <div id="amM"></div>
+        <script>
+            function earnings() {
+                var hoursWorked = parseFloat(document.getElementById("hwip").value);
+                var hourlyWage = parseFloat(document.getElementById("hlwip").value);
+
+                if (hoursWorked <= 40) {
+                    var earned= hoursWorked * hourlyWage;
+                }
+                if (hoursWorked > 40) {
+                    var overTime = hoursWorked % 40;
+                    var overPay = (hourlyWage * 1.5) * overTime;
+                    var earned = (40 * hourlyWage) + overPay;
+                }
+                document.getElementById("amM").innerHTML = "$" + earned;
+            }
+        </script>
+    </body>
+</html>
