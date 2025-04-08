@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Select your favorite color</p>
+        <input type="color" id="favcolorip">
+        <p>Select your favorite hobby</p>
+        <input type="radio" name="hobbyin" id="hobby1in" value="Video Games">
+        <label for="hobby">Video Games</label><br>
+        <input type="radio" name="hobbyin" id="hobby2in" value="Sports">
+        <label for="hobby">Sports</label><br>
+        <input type="radio" name="hobbyin" id="hobby3in" value="Gambling">
+        <label for="hobby">Gambling</label><br>
+        <input type="radio" name="hobbyin" id="hobby4in" value="Running">
+        <label for="hobby">Running</label><br>
+        <input type="radio" name="hobbyin" id="hobby5in" value="Puzzles">
+        <label for="hobby">Puzzles</label><br>
+        <button onclick="favorite()">Submit</button>
+        <div id="favcolorop"></div>
+        <div id="favhobbyop"></div>
+        <script>
+            function favorite() {
+                var color = document.getElementById("favcolorip").value;
+                const hobby = document.getElementsByName("hobbyin");
+                let selectedHobby = "None";
+                for (const h of hobby){
+                    if (h.checked) {
+                        selectedHobby = h.value;
+                        break;
+                    }
+                }
+                document.getElementById("favcolorop").innerHTML = "Favorite color: " + color;
+                document.getElementById("favhobbyop").innerHTML = "Favorite hobby: " + selectedHobby;
+
+            }
+        </script>
+    </body>
+</html>
